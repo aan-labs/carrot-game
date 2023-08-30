@@ -3,21 +3,18 @@
 import { ItemBuilder } from './src/item.js';
 import { GameBuilder } from './src/game.js';
 
+function setVh() {
+  const game = document.querySelector('.game');
+  game.style.setProperty('--vh', `${window.innerHeight + 1}px`);
+}
+window.addEventListener('resize', setVh);
+setVh();
+
 window.addEventListener('load', () => {
-  
-  function setVh() {
-    const game = document.querySelector('.game');
-    game.style.setProperty('--vh', `${window.innerHeight + 1}px`);
-  }
-
-  window.addEventListener('resize', setVh);
-  setVh();
-
   let item;
   let bomb;
 
-  if (/Android|iPhone/i.test(navigator.userAgent)) {
-    // mobile
+  if (/Android|iPhone/i.test(navigator.userAgent)) { // mobile
     item = new ItemBuilder()
       .count(5)
       .className('carrot')
@@ -25,7 +22,7 @@ window.addEventListener('load', () => {
       .imgWidth(30)
       .imgHeight(134)
       .build();
-  
+
     bomb = new ItemBuilder()
       .count(5)
       .className('tokki')
@@ -33,8 +30,7 @@ window.addEventListener('load', () => {
       .imgWidth(90)
       .imgHeight(127)
       .build();
-  } else {
-    // pc
+  } else { // pc
     item = new ItemBuilder()
       .count(5)
       .className('carrot')
