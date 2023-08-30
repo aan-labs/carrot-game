@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
       .build();
   
     bomb = new ItemBuilder()
-      .count(10)
+      .count(7)
       .className('tokki')
       .imgPath('./images/tokki.png')
       .imgWidth(120)
@@ -62,3 +62,8 @@ window.addEventListener('load', () => {
 })
 
 
+/**
+ * popup.js - show method에서 score 필요없으면 삭제
+ * animation.js - 쉽게 다시 정리
+ * sound.js - load 이슈 해결해보기
+ */
