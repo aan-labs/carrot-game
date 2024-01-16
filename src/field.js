@@ -64,7 +64,6 @@ export class Field {
   }
 
   #clickListener = (e) => {
-    console.log(e)
     if (e.target.classList.contains(this.#ITEM_OBJ.className)) {
       e.target.remove();
       this.#onItemClick();
